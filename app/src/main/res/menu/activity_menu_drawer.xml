@@ -5,33 +5,41 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
+            android:id="@+id/nav_inicio"
+            android:icon="@drawable/ic_menu_inicio"
+            android:title="Inicio" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
+            android:id="@+id/nav_chat"
+            android:icon="@drawable/ic_menu_chat"
+            android:title="Chat" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
+            android:id="@+id/nav_ajustes"
+            android:icon="@drawable/ic_menu_configuracion"
+            android:title="Ajuste" />
         <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:id="@+id/nav_informacion"
+            android:icon="@drawable/ic_menu_informacion"
+            android:title="Información" />
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="Redes Sociales">
         <menu>
             <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
+                android:id="@+id/nav_facebook"
+                android:icon="@drawable/ic_menu_facebook"
+                android:title="Facebook" />
             <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:id="@+id/nav_twitter"
+                android:icon="@drawable/ic_menu_twitter"
+                android:title="Twitter" />
+            <item
+                android:id="@+id/nav_snapchat"
+                android:icon="@drawable/ic_menu_snapchat"
+                android:title="Snapchat" />
+            <item
+                android:id="@+id/nav_youtube"
+                android:icon="@drawable/ic_menu_youtube"
+                android:title="YouTube" />
         </menu>
     </item>
 

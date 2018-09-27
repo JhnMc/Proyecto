@@ -1,14 +1,26 @@
 package engineers.system.com.appcolegio.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.zip.Inflater;
+
+import engineers.system.com.appcolegio.AlumnoActivity;
 import engineers.system.com.appcolegio.R;
+import engineers.system.com.appcolegio.adaptadores.AdapterAlumno;
+import engineers.system.com.appcolegio.modelo.Alumno;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -27,6 +39,10 @@ public class InicioFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    RecyclerView recyclerAlumno;
+    ArrayList<Alumno> alumnoArrayList;
+    View vista;
 
     private OnFragmentInteractionListener mListener;
 
@@ -64,8 +80,31 @@ public class InicioFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_inicio, container, false);
+        vista = inflater.inflate(R.layout.fragment_inicio, container, false);
+        alumnoArrayList = new ArrayList<>();
+        recyclerAlumno = (RecyclerView) vista.findViewById(R.id.recycleId);
+        recyclerAlumno.setLayoutManager(new LinearLayoutManager(getContext()));
+
+
+        llenarLista();
+        final AdapterAlumno adapterAlumno = new AdapterAlumno(alumnoArrayList);
+        adapterAlumno.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), AlumnoActivity.class);
+                startActivity(intent);
+            }
+        });
+        recyclerAlumno.setAdapter(adapterAlumno);
+        return vista;
+    }
+
+    private void llenarLista() {
+
+        alumnoArrayList.add(new Alumno(R.drawable.logo,"Juan","Salazar", "Masculino", "Ate", "10/10/10"));
+        alumnoArrayList.add(new Alumno(R.drawable.logo,"Juan Pablo Vilca Android","Salazar Guitierrez", "Masculino", "Ate", "10/10/10"));
+        alumnoArrayList.add(new Alumno(R.drawable.logo,"Juan","Salazar", "Masculino", "Ate", "10/10/10"));
+        alumnoArrayList.add(new Alumno(R.drawable.logo,"Juan","Salazar", "Masculino", "Ate", "10/10/10"));
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -106,4 +145,6 @@ public class InicioFragment extends Fragment {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
+
+
 }

@@ -1,9 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/accion_general"
+        android:icon="@drawable/ic_barraopcional_general"
         android:orderInCategory="100"
-        android:title="@string/action_settings"
-        app:showAsAction="never" />
+        android:title="general"
+        app:showAsAction="always"
+        />
+    <item
+        android:id="@+id/accion_asistencia"
+        android:icon="@drawable/ic_barraopcional_asistencia"
+        android:orderInCategory="100"
+        android:title="asistencia"
+        app:showAsAction="always"
+        />
+    <item
+        android:id="@+id/accion_actividad"
+        android:icon="@drawable/ic_barraopcional_actividad"
+        android:orderInCategory="100"
+        app:showAsAction="always"
+        android:title="actividad"
+        />
+    <item
+        android:id="@+id/accion_plano"
+        android:icon="@drawable/ic_barraopcional_plano"
+        android:orderInCategory="100"
+        android:title="plano"
+        app:showAsAction="always"
+        />
 </menu>
