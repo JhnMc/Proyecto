@@ -91,8 +91,7 @@ public class InicioFragment extends Fragment {
         adapterAlumno.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getContext(), AlumnoActivity.class);
-                startActivity(intent);
+                Toast.makeText(getView().getContext(),alumnoArrayList.get(recyclerAlumno.getChildAdapterPosition(v)).getNombre(),Toast.LENGTH_SHORT).show();
             }
         });
         recyclerAlumno.setAdapter(adapterAlumno);
@@ -101,10 +100,9 @@ public class InicioFragment extends Fragment {
 
     private void llenarLista() {
 
-        alumnoArrayList.add(new Alumno(R.drawable.logo,"Juan","Salazar", "Masculino", "Ate", "10/10/10"));
-        alumnoArrayList.add(new Alumno(R.drawable.logo,"Juan Pablo Vilca Android","Salazar Guitierrez", "Masculino", "Ate", "10/10/10"));
-        alumnoArrayList.add(new Alumno(R.drawable.logo,"Juan","Salazar", "Masculino", "Ate", "10/10/10"));
-        alumnoArrayList.add(new Alumno(R.drawable.logo,"Juan","Salazar", "Masculino", "Ate", "10/10/10"));
+        alumnoArrayList.add(new Alumno(R.drawable.logo,"Cesar","Acuña de la Cruz", "Masculino", "Ate", "10/10/10"));
+        alumnoArrayList.add(new Alumno(R.drawable.logo,"danny","Montoya Negrillo", "Masculino", "Ate", "10/10/10"));
+
     }
 
     // TODO: Rename method, update argument and hook method into UI event
